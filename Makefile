@@ -1,32 +1,44 @@
 .PHONY: all clean fclean re
 
+CFLAGS := -Wall -Wextra -Werror -I include/libfts -I include/specs
+
+CFILES :=	main.c unit_bzero.c
+
+CSRC := $(addprefix src/specs/, $(CFILES))
+
 NASM := nasm
 
 NASMFLAGS := -f macho64
 
-CFLAGS := -c -Wall -Wextra -Werror -g3
+ASMFILES := ft_bzero.s
 
-FILES := ft_bzero.s
+ASMSRC := $(addprefix src/libfts/, $(ASMFILES))
 
-SRC := $(addprefix src/libfts/, $(FILES))
+NASMOBJ := $(ASMFILES:%.s=obj/%.o)
 
-NASMOBJ := $(FILES:%.s=obj/%.o)
+LFLAGS := -L. -lfts
 
 LIBFT := libfts.a
 
-all: $(LIBFT)
+NAME := ft_libfts
+
+all: $(LIBFT) $(NAME)
 
 $(LIBFT) : $(NASMOBJ)
 	ar rcs $@ $^	
 
 obj/%.o: src/libfts/%.s
 	@mkdir -p obj/
-	$(NASM) $(NASMFLAGS) $(SRC) -o $@
+	$(NASM) $(NASMFLAGS) $(ASMSRC) -o $@
+
+$(NAME):
+	$(CC) $(CFLAGS) $(CSRC) $(LFLAGS) -o $(NAME)
 
 clean:
 	rm -rf obj
 
 fclean: clean
 	rm -rf $(LIBFT)
+	rm -rf $(NAME)
 
 re: fclean all
