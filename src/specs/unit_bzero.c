@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include "libfts.h"
 #include "unit_bzero.h"
@@ -8,7 +9,7 @@ void    unit_bzero(void)
     int   r;
 
     r = 0;
-    printf("Unit tests for BZERO\n");
+    printf("Unit tests for BZERO\n---------------------\n");
     printf("TEST #1: ");
     r += unit_bzero_int(42, sizeof(int));
     printf("TEST #2: ");
@@ -17,7 +18,7 @@ void    unit_bzero(void)
     r += unit_bzero_string("This is a test", 14);
     printf("TEST #4: ");
     r += unit_bzero_float(4.42f, sizeof(float));
-    printf("[%d] Tests failed !\n", r);
+    printf("[%d] Tests failed !\n---------------------\n", r);
 }
 
 int     unit_bzero_int(int n, size_t size)

@@ -2,7 +2,8 @@
 
 CFLAGS := -Wall -Wextra -Werror -I include/libfts -I include/specs
 
-CFILES :=	main.c unit_bzero.c
+CFILES :=	main.c unit_bzero.c unit_strcat.c unit_isalpha.c \
+			unit_isdigit.c
 
 CSRC := $(addprefix src/specs/, $(CFILES))
 
@@ -10,7 +11,7 @@ NASM := nasm
 
 NASMFLAGS := -f macho64
 
-ASMFILES := ft_bzero.s
+ASMFILES := ft_bzero.s ft_strcat.s ft_isalpha.s ft_isdigit.s
 
 ASMSRC := $(addprefix src/libfts/, $(ASMFILES))
 
@@ -29,7 +30,7 @@ $(LIBFT) : $(NASMOBJ)
 
 obj/%.o: src/libfts/%.s
 	@mkdir -p obj/
-	$(NASM) $(NASMFLAGS) $(ASMSRC) -o $@
+	$(NASM) $(NASMFLAGS) $< -o $@
 
 $(NAME):
 	$(CC) $(CFLAGS) $(CSRC) $(LFLAGS) -o $(NAME)
