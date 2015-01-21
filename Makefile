@@ -3,7 +3,8 @@
 CFLAGS := -Wall -Wextra -Werror -I include/libfts -I include/specs
 
 CFILES :=	main.c unit_bzero.c unit_strcat.c unit_isalpha.c \
-			unit_isdigit.c
+			unit_isdigit.c unit_isalnum.c unit_isascii.c unit_isprint.c \
+			unit_toupper.c unit_tolower.c unit_puts.c
 
 CSRC := $(addprefix src/specs/, $(CFILES))
 
@@ -11,7 +12,9 @@ NASM := nasm
 
 NASMFLAGS := -f macho64
 
-ASMFILES := ft_bzero.s ft_strcat.s ft_isalpha.s ft_isdigit.s
+ASMFILES := ft_bzero.s ft_strcat.s ft_isalpha.s ft_isdigit.s \
+						ft_isalnum.s ft_isascii.s ft_isprint.s ft_toupper.s \
+						ft_tolower.s ft_puts.s
 
 ASMSRC := $(addprefix src/libfts/, $(ASMFILES))
 

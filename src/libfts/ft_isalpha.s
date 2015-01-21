@@ -9,7 +9,7 @@ _ft_isalpha:
 	jg is_maj
 	jmp is_alpha
 
-is_maj
+is_maj:
 	cmp rdi, 0x61
 	jl not_alpha
 	cmp rdi, 0x7a
