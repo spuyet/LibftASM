@@ -2,6 +2,8 @@
 
 global _ft_puts
 
+section .text
+
 _ft_puts:
   push rbp
   mov rbp, rsp
@@ -23,5 +25,15 @@ print:
   mov rax, 0x2000004 ; write
   syscall
 
+  lea rsi, [rel msg]
+  mov rdx, 0x1 ; length 
+  mov rax, 0x2000004 ; write
+  syscall
+
+  mov rax, 0xa
   pop rbp
   ret
+
+section .rodata
+ 
+msg:    db      `\n`

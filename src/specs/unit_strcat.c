@@ -31,9 +31,11 @@ int		unit_strcat_one(void)
 	if (memcmp(s1, s2, 15))
 	{
 		printf("\033[0;31mFailure\n\e[0m");
+		free(s1);
 		return (1);
 	}
     printf("\033[0;32mSuccess\n\e[0m");
+    free(s1);
 	return (0);
 }
 
@@ -47,9 +49,11 @@ int		unit_strcat_two(void)
 	if (memcmp(s1, s2, 15))
 	{
 		printf("\033[0;31mFailure\n\e[0m");
+		free(s1);
 		return (1);
 	}
     printf("\033[0;32mSuccess\n\e[0m");
+    free(s1);
 	return (0);
 }
 
@@ -65,8 +69,10 @@ int		unit_strcat_three(void)
 	if (memcmp(s1, "This is a test !", 15))
 	{
 		printf("\033[0;31mFailure\n\e[0m");
+		free(s1);
 		return (1);
 	}
+	free(s1);
     printf("\033[0;32mSuccess\n\e[0m");
 	return (0);
 }
@@ -82,8 +88,10 @@ int		unit_strcat_four(void)
 	if (memcmp(s1, "A test is coming !", 18))
 	{
 		printf("\033[0;31mFailure\n\e[0m");
+		free(s1);
 		return (1);
 	}
     printf("\033[0;32mSuccess\n\e[0m");
+    free(s1);
 	return (0);
 }

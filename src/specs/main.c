@@ -9,6 +9,9 @@
 #include "unit_toupper.h"
 #include "unit_tolower.h"
 #include "unit_puts.h"
+#include "unit_strlen.h"
+#include "unit_memset.h"
+#include "unit_memcpy.h"
 
 void  first_part_tests(void)
 {
@@ -34,10 +37,22 @@ void  first_part_tests(void)
   printf("\n");
 }
 
+void  second_part_tests(void)
+{
+  unit_strlen();
+  printf("\n");
+  unit_memset();
+  printf("\n");
+  unit_memcpy();
+  printf("\n");
+
+}
+
 int		main(void)
 {
 	printf("---------------------\n   BEGINNING TESTS\n---------------------\n\n");
   first_part_tests();
+  second_part_tests();
   printf("---------------------\n      END TESTS\n---------------------\n\n");
 	return (0);
 }

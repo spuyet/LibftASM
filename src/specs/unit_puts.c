@@ -5,11 +5,15 @@
 void    unit_puts(void)
 {
   int   r;
-  
-  printf("Unit tests for PUTS\n---------------------\n");
+
+  puts("Unit tests for PUTS\n---------------------");
+  puts("TEST #1: ");
   r = unit_puts_test("TEST 1");
+  puts("TEST #2: ");
   r += unit_puts_test("test 2");
+  puts("TEST #3: ");
   r += unit_puts_test("");
+  puts("TEST #4: ");
   r += unit_puts_test("42 school");
   printf("[%d] Tests failed !\n---------------------\n", r);
 }
