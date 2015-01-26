@@ -3,17 +3,18 @@
 global _ft_memset
 
 _ft_memset:
-	mov rax, rdi
+	push rbp
+	mov rbp, rsp
+	push rdi
+	cmp rdi, 0x0
+	jz end
 	mov rcx, rdx
-
-begin_loop:
-	cmp rcx, 0x0
-	je end
-	mov [rdi], rsi
-	dec rcx
-	inc rdi
-	jmp begin_loop
+	mov rax, rsi
+	cld
+rep stosb
 
 end: 
-	mov rdi, rax
+	pop rdi
+	pop rbp
+	mov rax, rdi
 	ret

@@ -5,27 +5,12 @@ global _ft_memcpy
 _ft_memcpy:
 	push rbp
 	mov rbp, rsp
-	push rcx
-	mov rcx, rdx
-	push rdi
 	push rsi
-	push rdx
-
-begin_loop:
-	cmp rcx, 0x0
-	je end
-	dec rcx
-	mov rdx, [rsi]
-	mov [rdi], rdx
-	inc rsi
-	inc rdi
-	jmp begin_loop
-
-end
-	pop rdx
-	pop rsi
+	push rdi
+	mov rcx, rdx
+	cld
+	movsb
 	pop rdi
-	mov rax, rdi
-	pop rcx
+	pop rsi
 	pop rbp
-	ret
+	mov rax, rdi
