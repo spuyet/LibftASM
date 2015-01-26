@@ -12,6 +12,7 @@
 #include "unit_strlen.h"
 #include "unit_memset.h"
 #include "unit_memcpy.h"
+#include "unit_strdup.h"
 
 void  first_part_tests(void)
 {
@@ -45,7 +46,7 @@ void  second_part_tests(void)
   printf("\n");
   unit_memcpy();
   printf("\n");
-
+  unit_strdup();
 }
 
 int		main(void)

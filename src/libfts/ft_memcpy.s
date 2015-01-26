@@ -9,8 +9,9 @@ _ft_memcpy:
 	push rdi
 	mov rcx, rdx
 	cld
-	movsb
+rep	movsb
 	pop rdi
 	pop rsi
 	pop rbp
 	mov rax, rdi
+	ret
