@@ -1,5 +1,3 @@
-[BITS 64]
-
 extern _ft_isalpha
 extern _ft_isdigit
 

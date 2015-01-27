@@ -1,6 +1,3 @@
-[BITS 64]
-
-
 global _ft_isascii
 
 _ft_isascii:

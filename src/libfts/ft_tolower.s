@@ -1,5 +1,3 @@
-[BITS 64]
-
 global _ft_tolower
 
 _ft_tolower:

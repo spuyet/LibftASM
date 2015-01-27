@@ -1,5 +1,3 @@
-[BITS 64]
-
 extern _malloc
 
 global _ft_strdup
