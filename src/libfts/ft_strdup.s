@@ -1,8 +1,6 @@
 [BITS 64]
 
 extern _malloc
-extern _ft_memcpy
-extern _ft_strlen
 
 global _ft_strdup
 
@@ -13,33 +11,32 @@ _ft_strdup:
 	jz null
 	push rdi
 	xor rcx, rcx
-
-length:
-	cmp BYTE [rdi], 0x0
-	je allocation
-	inc rcx
-	inc rdi
-	jmp length
+	not rcx
+	xor al, al
+	cld
+	repne scasb
+	not rcx
+	dec rcx
 
 allocation:
 	inc rcx
 	mov rdi, rcx
+	push rcx
 	call _malloc
+	pop rcx
 	pop rdi
-	push rax
 
-cpy:
-	cmp BYTE [rdi], 0x0
-	je end
-	mov rdx, [rdi]
-	mov [rax], rdx
-	inc rdi	
-	inc rax
-	jmp cpy
+	mov rsi, rdi
+	mov rdi, rax
+	push rsi
+	push rdi
+
+	cld
+	rep movsb
 
 end:
-	mov BYTE [rax], 0x0
-	pop rax
+	pop rdi
+	pop rsi
 	pop rbp
 	ret
 
