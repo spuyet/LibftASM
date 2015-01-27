@@ -3,10 +3,6 @@
 global _ft_bzero
 
 _ft_bzero:
-	push rbp
-	mov rbp, rsp
-	push rdi
-	push rsi
 
 loop_start:
 	cmp rsi, 0
@@ -17,7 +13,4 @@ loop_start:
 	jmp loop_start
 
 loop_end:
-	pop rsi
-	pop rdi
-	pop rbp
 	ret

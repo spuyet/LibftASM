@@ -5,9 +5,6 @@ global _ft_puts
 section .text
 
 _ft_puts:
-  push rbp
-  mov rbp, rsp
-
   xor rcx, rcx
   mov rbx, rdi
 
@@ -31,7 +28,6 @@ print:
   syscall
 
   mov rax, 0xa
-  pop rbp
   ret
 
 section .rodata

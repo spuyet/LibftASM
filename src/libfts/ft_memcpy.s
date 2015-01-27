@@ -21,6 +21,7 @@ rep	movsb
 	pop rbp
 	mov rax, rdi
 	ret
+
 null:
 	pop rbp
 	mov rax, rdi

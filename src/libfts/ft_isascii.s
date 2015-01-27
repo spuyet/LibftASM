@@ -4,9 +4,9 @@
 global _ft_isascii
 
 _ft_isascii:
-  cmp rdi, 0
+  cmp rdi, 0x0
   jl not_ascii
-  cmp rdi, 127
+  cmp rdi, 0x7f
   jle is_ascii
 
 not_ascii:
