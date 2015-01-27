@@ -29,4 +29,6 @@ size_t		unit_strdup_test(const char *s)
   	}
   	printf("\033[0;32mSuccess\n\e[0m");
   	return (0);
+  (void)s2;
+  return 0;
 }
