@@ -13,6 +13,7 @@
 #include "unit_memset.h"
 #include "unit_memcpy.h"
 #include "unit_strdup.h"
+#include "unit_cat.h"
 
 void  first_part_tests(void)
 {
@@ -47,13 +48,16 @@ void  second_part_tests(void)
   unit_memcpy();
   printf("\n");
   unit_strdup();
+  printf("\n");
+  unit_cat();
 }
 
-int		main(void)
+int		main()
 {
 	printf("---------------------\n   BEGINNING TESTS\n---------------------\n\n");
   first_part_tests();
   second_part_tests();
   printf("---------------------\n      END TESTS\n---------------------\n\n");
-	return (0);
+  return (0);
+
 }
