@@ -10,7 +10,7 @@ void    unit_puts(void)
   puts("TEST #1: ");
   r = unit_puts_test("TEST 1");
   puts("TEST #2: ");
-  r += unit_puts_test("test 2");
+  r += unit_puts_test(NULL);
   puts("TEST #3: ");
   r += unit_puts_test("");
   puts("TEST #4: ");
