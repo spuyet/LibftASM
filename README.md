@@ -1,4 +1,4 @@
-# Libfts
+# LibftASM
 
 ### The project
 
@@ -34,4 +34,4 @@ Unit tests are provided and compiled with the lib, for run them, just execute `f
 
 ### About
 
-Libfts is a school project for 42.
+LibftASM is a school project for 42.
