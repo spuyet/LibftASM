@@ -22,7 +22,7 @@ A intel x86_64 assembly implementation for mac of some libc functions:
 
 The makefile compile and link the `libfts.a` static library.
 
-### Dependencies
+### Build dependencies
 
 * nasm
 * gcc
